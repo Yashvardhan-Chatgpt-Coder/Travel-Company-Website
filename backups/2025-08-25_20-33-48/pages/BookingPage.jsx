@@ -71,7 +71,7 @@ export const BookingPage = () => {
     
     // Mock booking submission
     toast.success('Booking submitted successfully! We will contact you within 24 hours.');
-
+    console.log('Booking data:', { ...formData, packageId: packageData.id });
   };
 
   const totalPrice = packageData.price * formData.travelers;

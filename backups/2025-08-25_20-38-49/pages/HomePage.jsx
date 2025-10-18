@@ -10,7 +10,9 @@ import { useHomePage } from '../context/HomePageContext';
 export const HomePage = () => {
   const { homePageData } = useHomePage();
   
-
+  // Debug logging
+  console.log('🏠 HomePage rendering with data:', homePageData);
+  console.log('🏠 Hero title:', homePageData.hero.title);
   
   // Get featured packages based on packageIds from context
   const featuredPackages = homePageData.featuredPackages.packageIds

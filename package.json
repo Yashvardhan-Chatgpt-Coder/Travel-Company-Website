@@ -1,0 +1,31 @@
+{
+  "name": "travel-company-website",
+  "version": "1.0.0",
+  "description": "Full-stack travel company website with React frontend and FastAPI backend",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "cd backend && python server.py",
+    "frontend": "cd frontend && npm start",
+    "install-all": "npm install && cd frontend && npm install && cd ../backend && pip install -r requirements.txt",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "stop": "powershell -ExecutionPolicy Bypass -File stop-servers.ps1",
+    "quick-start": "powershell -ExecutionPolicy Bypass -File start-servers.ps1",
+    "build": "cd frontend && npm run build",
+    "build:prod": "cd frontend && npm run build && cd ../backend && python -m py_compile server.py",
+    "test": "cd frontend && npm test -- --watchAll=false",
+    "lint": "cd frontend && npm run lint",
+    "lint:fix": "cd frontend && npm run lint -- --fix"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "travel",
+    "website",
+    "react",
+    "fastapi",
+    "fullstack"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+} 
