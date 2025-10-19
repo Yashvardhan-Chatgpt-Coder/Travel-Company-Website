@@ -7,7 +7,7 @@ const Breadcrumb = ({ items }) => {
     <nav className="flex items-center space-x-1 text-sm text-slate-600 mb-6">
       <Link 
         to="/admin" 
-        className="flex items-center hover:text-emerald-600 transition-colors"
+        className="flex items-center hover:text-blue-600 transition-colors"
       >
         <Home className="h-4 w-4 mr-1" />
         Admin
@@ -21,7 +21,7 @@ const Breadcrumb = ({ items }) => {
           ) : (
             <Link 
               to={item.href} 
-              className="hover:text-emerald-600 transition-colors"
+              className="hover:text-blue-600 transition-colors"
             >
               {item.label}
             </Link>

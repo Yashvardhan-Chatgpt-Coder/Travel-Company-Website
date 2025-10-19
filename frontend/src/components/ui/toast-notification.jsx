@@ -16,7 +16,7 @@ const ToastNotification = ({ message, type = 'success', duration = 4000, onClose
   const getIcon = () => {
     switch (type) {
       case 'success':
-        return <CheckCircle className="h-5 w-5 text-emerald-500" />;
+        return <CheckCircle className="h-5 w-5 text-blue-500" />;
       case 'error':
         return <XCircle className="h-5 w-5 text-red-500" />;
       case 'warning':
@@ -24,14 +24,14 @@ const ToastNotification = ({ message, type = 'success', duration = 4000, onClose
       case 'info':
         return <Info className="h-5 w-5 text-blue-500" />;
       default:
-        return <CheckCircle className="h-5 w-5 text-emerald-500" />;
+        return <CheckCircle className="h-5 w-5 text-blue-500" />;
     }
   };
 
   const getStyles = () => {
     switch (type) {
       case 'success':
-        return 'border-emerald-200 bg-emerald-50 text-emerald-800';
+        return 'border-blue-200 bg-blue-50 text-blue-800';
       case 'error':
         return 'border-red-200 bg-red-50 text-red-800';
       case 'warning':
@@ -39,7 +39,7 @@ const ToastNotification = ({ message, type = 'success', duration = 4000, onClose
       case 'info':
         return 'border-blue-200 bg-blue-50 text-blue-800';
       default:
-        return 'border-emerald-200 bg-emerald-50 text-emerald-800';
+        return 'border-blue-200 bg-blue-50 text-blue-800';
     }
   };
 

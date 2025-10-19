@@ -50,7 +50,7 @@ export const BlogPostPage = () => {
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <header className="mb-8">
           <div className="flex items-center space-x-4 mb-4">
-            <Badge className="bg-emerald-500 text-white">
+            <Badge className="bg-blue-500 text-white">
               {post.category}
             </Badge>
             <div className="flex items-center text-slate-500 text-sm space-x-4">
@@ -140,7 +140,7 @@ export const BlogPostPage = () => {
             However, don't over-plan every moment; some of the best travel experiences come from spontaneous discoveries.
           </p>
           
-          <blockquote className="border-l-4 border-emerald-500 pl-6 py-4 my-8 bg-emerald-50 rounded-r-lg">
+          <blockquote className="border-l-4 border-blue-500 pl-6 py-4 my-8 bg-blue-50 rounded-r-lg">
             <p className="text-slate-700 italic text-lg">
               "The world is a book, and those who do not travel read only one page." - Saint Augustine
             </p>
@@ -161,7 +161,7 @@ export const BlogPostPage = () => {
               <Badge 
                 key={index} 
                 variant="outline" 
-                className="cursor-pointer hover:bg-emerald-50 hover:border-emerald-500 hover:text-emerald-600"
+                className="cursor-pointer hover:bg-blue-50 hover:border-blue-500 hover:text-blue-600"
               >
                 <Tag className="h-3 w-3 mr-1" />
                 {tag}
@@ -187,8 +187,8 @@ export const BlogPostPage = () => {
                   photography, they inspire others to embark on their own adventures.
                 </p>
                 <div className="flex space-x-4 text-sm">
-                  <a href="#" className="text-emerald-600 hover:text-emerald-700">Follow on Twitter</a>
-                  <a href="#" className="text-emerald-600 hover:text-emerald-700">View Profile</a>
+                  <a href="#" className="text-blue-600 hover:text-blue-700">Follow on Twitter</a>
+                  <a href="#" className="text-blue-600 hover:text-blue-700">View Profile</a>
                 </div>
               </div>
             </div>
@@ -209,7 +209,7 @@ export const BlogPostPage = () => {
                       className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                     />
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-emerald-500 text-white text-xs">
+                      <Badge className="bg-blue-500 text-white text-xs">
                         {relatedPost.category}
                       </Badge>
                     </div>
@@ -219,7 +219,7 @@ export const BlogPostPage = () => {
                       <Calendar className="h-3 w-3 mr-1" />
                       {formatDate(relatedPost.publishDate)}
                     </div>
-                    <h3 className="font-semibold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
+                    <h3 className="font-semibold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                       <Link to={`/blog/${relatedPost.id}`}>{relatedPost.title}</Link>
                     </h3>
                     <p className="text-sm text-slate-600 mb-3 line-clamp-2">
@@ -236,7 +236,7 @@ export const BlogPostPage = () => {
         )}
 
         {/* Newsletter CTA */}
-        <Card className="p-8 bg-gradient-to-r from-emerald-50 to-teal-50 text-center mb-20">
+        <Card className="p-8 bg-gradient-to-r from-blue-50 to-indigo-50 text-center mb-20">
           <CardContent className="p-0">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">Stay Updated</h2>
             <p className="text-slate-600 mb-6">
@@ -246,9 +246,9 @@ export const BlogPostPage = () => {
               <input 
                 type="email" 
                 placeholder="Your email address"
-                className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500"
+                className="flex-1 px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <Button className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
+              <Button className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white">
                 Subscribe
               </Button>
             </div>

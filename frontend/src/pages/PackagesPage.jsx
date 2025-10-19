@@ -42,12 +42,12 @@ export const PackagesPage = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-emerald-600 to-teal-700 text-white">
+      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Explore Our Travel Packages
           </h1>
-          <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Discover amazing destinations and create unforgettable memories with our carefully curated travel experiences
           </p>
         </div>
@@ -140,7 +140,7 @@ export const PackagesPage = () => {
                       className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                     <div className="absolute top-4 left-4">
-                      <Badge className="bg-emerald-500 text-white">
+                      <Badge className="bg-blue-500 text-white">
                         {pkg.category}
                       </Badge>
                     </div>
@@ -165,7 +165,7 @@ export const PackagesPage = () => {
                       <MapPin className="h-4 w-4 mr-1" />
                       {pkg.destination}
                     </div>
-                    <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-emerald-600 transition-colors">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-blue-600 transition-colors">
                       {pkg.title}
                     </h3>
                     <div className="flex items-center text-slate-500 text-sm mb-4">
@@ -178,12 +178,12 @@ export const PackagesPage = () => {
                       <ul className="text-sm text-slate-600 space-y-1">
                         {pkg.highlights.slice(0, 2).map((highlight, index) => (
                           <li key={index} className="flex items-center">
-                            <div className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></div>
+                            <div className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></div>
                             {highlight}
                           </li>
                         ))}
                         {pkg.highlights.length > 2 && (
-                          <li className="text-emerald-600 font-medium">
+                          <li className="text-blue-600 font-medium">
                             +{pkg.highlights.length - 2} more highlights
                           </li>
                         )}
@@ -202,7 +202,7 @@ export const PackagesPage = () => {
                           asChild
                           variant="outline"
                           size="sm"
-                          className="hover:bg-emerald-50 hover:border-emerald-500 hover:text-emerald-600"
+                          className="hover:bg-blue-50 hover:border-blue-500 hover:text-blue-600"
                         >
                           <Link to={`/packages/${pkg.id}`}>
                             View Details
@@ -211,7 +211,7 @@ export const PackagesPage = () => {
                         <Button 
                           asChild
                           size="sm"
-                          className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+                          className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white"
                         >
                           <Link to={`/book/${pkg.id}`}>
                             Book Now
@@ -231,7 +231,7 @@ export const PackagesPage = () => {
               <Button 
                 variant="outline"
                 size="lg"
-                className="px-8 hover:bg-emerald-50 hover:border-emerald-500 hover:text-emerald-600"
+                className="px-8 hover:bg-blue-50 hover:border-blue-500 hover:text-blue-600"
               >
                 Load More Packages
                 <ArrowRight className="ml-2 h-5 w-5" />

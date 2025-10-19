@@ -31,7 +31,7 @@ export const HomePageProvider = ({ children }) => {
     featuredPackages: {
       title: 'Popular Destinations',
       description: 'Discover our most sought-after travel experiences, carefully curated for unforgettable adventures',
-      packageIds: [1, 2, 3, 4]
+      packageIds: [1, 2, 3]
     },
     latestBlogs: {
       title: 'Latest Travel Stories',

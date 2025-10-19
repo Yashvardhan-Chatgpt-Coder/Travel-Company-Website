@@ -95,8 +95,8 @@ const PackageManagementContent = () => {
     { value: 'pink', label: 'Pink', bg: 'bg-pink-500', bgLight: 'bg-pink-100', text: 'text-pink-700', border: 'border-pink-200' },
     { value: 'indigo', label: 'Indigo', bg: 'bg-indigo-500', bgLight: 'bg-indigo-100', text: 'text-indigo-700', border: 'border-indigo-200' },
     { value: 'yellow', label: 'Yellow', bg: 'bg-yellow-500', bgLight: 'bg-yellow-100', text: 'text-yellow-700', border: 'border-yellow-200' },
-    { value: 'emerald', label: 'Emerald', bg: 'bg-emerald-500', bgLight: 'bg-emerald-100', text: 'text-emerald-700', border: 'border-emerald-200' },
-    { value: 'teal', label: 'Teal', bg: 'bg-teal-500', bgLight: 'bg-teal-100', text: 'text-teal-700', border: 'border-teal-200' },
+    { value: 'blue', label: 'Blue', bg: 'bg-blue-500', bgLight: 'bg-blue-100', text: 'text-blue-700', border: 'border-blue-200' },
+    { value: 'indigo', label: 'Indigo', bg: 'bg-indigo-500', bgLight: 'bg-indigo-100', text: 'text-indigo-700', border: 'border-indigo-200' },
     { value: 'sky', label: 'Sky', bg: 'bg-sky-500', bgLight: 'bg-sky-100', text: 'text-sky-700', border: 'border-sky-200' },
     { value: 'amber', label: 'Amber', bg: 'bg-amber-500', bgLight: 'bg-amber-100', text: 'text-amber-700', border: 'border-amber-200' },
     { value: 'rose', label: 'Rose', bg: 'bg-rose-500', bgLight: 'bg-rose-100', text: 'text-rose-700', border: 'border-rose-200' },
@@ -108,7 +108,7 @@ const PackageManagementContent = () => {
     { id: 2, name: 'Cultural & Historical', description: 'Heritage and cultural experience tours', color: 'purple', icon: 'Hash', packagesCount: 8 },
     { id: 3, name: 'Adventure & Nature', description: 'Thrilling outdoor and nature adventures', color: 'green', icon: 'Tag', packagesCount: 15 },
     { id: 4, name: 'City & Urban', description: 'Urban exploration and city experiences', color: 'orange', icon: 'Hash', packagesCount: 10 },
-    { id: 5, name: 'Wildlife & Safari', description: 'Wildlife encounters and safari experiences', color: 'emerald', icon: 'Tag', packagesCount: 6 },
+    { id: 5, name: 'Wildlife & Safari', description: 'Wildlife encounters and safari experiences', color: 'blue', icon: 'Tag', packagesCount: 6 },
     { id: 6, name: 'Luxury & Premium', description: 'High-end luxury travel experiences', color: 'indigo', icon: 'Hash', packagesCount: 4 }
   ];
 
@@ -202,7 +202,7 @@ const PackageManagementContent = () => {
                 Add New Category
               </Button>
               <Button 
-                className="bg-emerald-700 hover:bg-emerald-800 text-white"
+                className="bg-blue-700 hover:bg-blue-800 text-white"
                 onClick={() => setShowAddPackageForm(true)}
               >
                 <Plus className="h-4 w-4 mr-2" />
@@ -220,7 +220,7 @@ const PackageManagementContent = () => {
                 <div>
                   <p className="text-sm font-medium text-slate-600">Total Packages</p>
                   <p className="text-2xl font-bold text-slate-900">24</p>
-                  <p className="text-sm text-emerald-600">+2 from last month</p>
+                  <p className="text-sm text-blue-600">+2 from last month</p>
                 </div>
                 <div className="bg-blue-100 p-3 rounded-full">
                   <Globe className="h-6 w-6 text-blue-600" />
@@ -234,10 +234,10 @@ const PackageManagementContent = () => {
                 <div>
                   <p className="text-sm font-medium text-slate-600">Active Packages</p>
                   <p className="text-2xl font-bold text-slate-900">20</p>
-                  <p className="text-sm text-emerald-600">+1 from last month</p>
+                  <p className="text-sm text-blue-600">+1 from last month</p>
                 </div>
-                <div className="bg-emerald-100 p-3 rounded-full">
-                  <TrendingUp className="h-6 w-6 text-emerald-600" />
+                <div className="bg-blue-100 p-3 rounded-full">
+                  <TrendingUp className="h-6 w-6 text-blue-600" />
                 </div>
               </div>
             </CardContent>
@@ -248,7 +248,7 @@ const PackageManagementContent = () => {
                 <div>
                   <p className="text-sm font-medium text-slate-600">Drafts</p>
                   <p className="text-2xl font-bold text-slate-900">4</p>
-                  <p className="text-sm text-emerald-600">0 from last month</p>
+                  <p className="text-sm text-blue-600">0 from last month</p>
                 </div>
                 <div className="bg-yellow-100 p-3 rounded-full">
                   <FileText className="h-6 w-6 text-yellow-600" />
@@ -262,7 +262,7 @@ const PackageManagementContent = () => {
                 <div>
                   <p className="text-sm font-medium text-slate-600">Categories</p>
                   <p className="text-2xl font-bold text-slate-900">6</p>
-                  <p className="text-sm text-emerald-600">+1 from last month</p>
+                  <p className="text-sm text-blue-600">+1 from last month</p>
                 </div>
                 <div className="bg-purple-100 p-3 rounded-full">
                   <Filter className="h-6 w-6 text-purple-600" />
@@ -407,7 +407,7 @@ const PackageManagementContent = () => {
                       className="w-full h-48 object-cover"
                     />
                     <div className="absolute top-3 left-3">
-                      <Badge className="bg-emerald-500 text-white">Beach & Relaxation</Badge>
+                      <Badge className="bg-blue-500 text-white">Beach & Relaxation</Badge>
                     </div>
                     <div className="absolute top-3 right-3">
                       <Badge className="bg-blue-500 text-white">$1,299</Badge>
@@ -458,7 +458,7 @@ const PackageManagementContent = () => {
                             <h3 className="font-semibold text-slate-900 text-lg">Bali Adventure</h3>
                             <div className="flex items-center space-x-2 mb-1">
                               <p className="text-sm text-slate-600">Bali, Indonesia</p>
-                              <Badge className="bg-emerald-500 text-white text-xs px-2 py-0.5">Beach & Relaxation</Badge>
+                              <Badge className="bg-blue-500 text-white text-xs px-2 py-0.5">Beach & Relaxation</Badge>
                             </div>
                           </div>
                           <div className="text-right">
@@ -885,7 +885,7 @@ const PackageManagementContent = () => {
                         className="w-full h-48 object-cover"
                       />
                       <div className="absolute top-3 left-3">
-                        <Badge className="bg-emerald-500 text-white">Adventure & Nature</Badge>
+                        <Badge className="bg-blue-500 text-white">Adventure & Nature</Badge>
                       </div>
                       <div className="absolute top-3 right-3">
                         <Badge className="bg-blue-500 text-white">$2,899</Badge>
@@ -931,7 +931,7 @@ const PackageManagementContent = () => {
                             <h3 className="font-semibold text-slate-900 text-lg">Swiss Alps Adventure</h3>
                             <div className="flex items-center space-x-2 mb-1">
                               <p className="text-sm text-slate-600">Switzerland</p>
-                              <Badge className="bg-emerald-500 text-white text-xs px-2 py-0.5">Adventure & Nature</Badge>
+                              <Badge className="bg-blue-500 text-white text-xs px-2 py-0.5">Adventure & Nature</Badge>
                             </div>
                           </div>
                             <div className="text-right">
@@ -1060,7 +1060,7 @@ const PackageManagementContent = () => {
                     </div>
 
                     <div className="flex space-x-3">
-                      <Button type="submit" className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                      <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
                         {editingCategory ? (
                           <>
                             <Save className="h-4 w-4 mr-2" />
@@ -1191,7 +1191,7 @@ export const AdminPanel = () => {
   });
 
   const stats = [
-    { label: 'Total Bookings', value: '1,234', change: '+12%', color: 'emerald', icon: Calendar },
+    { label: 'Total Bookings', value: '1,234', change: '+12%', color: 'blue', icon: Calendar },
     { label: 'Total Packages', value: packages.length.toString(), change: '+3', color: 'blue', icon: Globe },
     { label: 'Revenue', value: '$45,678', change: '+8%', color: 'purple', icon: BarChart3 },
     { label: 'Satisfaction', value: '98.5%', change: '+2%', color: 'amber', icon: Award }
@@ -1310,7 +1310,7 @@ export const AdminPanel = () => {
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'confirmed': return 'bg-emerald-100 text-emerald-800';
+      case 'confirmed': return 'bg-blue-100 text-blue-800';
       case 'pending': return 'bg-yellow-100 text-yellow-800';
       case 'cancelled': return 'bg-red-100 text-red-800';
       default: return 'bg-gray-100 text-gray-800';
@@ -1595,7 +1595,7 @@ export const AdminPanel = () => {
             {[...Array(8)].map((_, i) => (
               <div
                 key={i}
-                className="absolute w-2 h-2 bg-emerald-400 rounded-full animate-bounce"
+                className="absolute w-2 h-2 bg-blue-400 rounded-full animate-bounce"
                 style={{
                   left: `${Math.random() * 100}%`,
                   top: `${Math.random() * 100}%`,
@@ -1609,8 +1609,8 @@ export const AdminPanel = () => {
           <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md mx-4 transform transition-all duration-500 scale-100 animate-in slide-in-from-bottom-4">
             <div className="text-center">
               {/* Success Icon */}
-              <div className="mx-auto flex items-center justify-center w-16 h-16 bg-emerald-100 rounded-full mb-6 animate-in zoom-in duration-500">
-                <svg className="w-8 h-8 text-emerald-600 animate-in slide-in-from-top-2 duration-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="mx-auto flex items-center justify-center w-16 h-16 bg-blue-100 rounded-full mb-6 animate-in zoom-in duration-500">
+                <svg className="w-8 h-8 text-blue-600 animate-in slide-in-from-top-2 duration-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path 
                     strokeLinecap="round" 
                     strokeLinejoin="round" 
@@ -1628,14 +1628,14 @@ export const AdminPanel = () => {
               
               {/* Success Message */}
               <p className="text-gray-600 mb-6 animate-in slide-in-from-bottom-2 duration-800">
-                Your <span className="font-semibold text-emerald-600">{enhancedSuccessSection.charAt(0).toUpperCase() + enhancedSuccessSection.slice(1)}</span> section has been updated successfully and is now live on your website! ✨
+                Your <span className="font-semibold text-blue-600">{enhancedSuccessSection.charAt(0).toUpperCase() + enhancedSuccessSection.slice(1)}</span> section has been updated successfully and is now live on your website! ✨
               </p>
               
               {/* Action Buttons */}
               <div className="flex space-x-3 animate-in slide-in-from-bottom-2 duration-900">
                 <button
                   onClick={() => setShowEnhancedSuccess(false)}
-                  className="flex-1 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-all duration-200 font-medium transform hover:scale-105 shadow-lg hover:shadow-xl"
+                  className="flex-1 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-all duration-200 font-medium transform hover:scale-105 shadow-lg hover:shadow-xl"
                 >
                   ✏️ Continue Editing
                 </button>
@@ -1689,7 +1689,7 @@ export const AdminPanel = () => {
                   <Eye className="h-4 w-4 mr-2" />
                   Preview
                 </Button>
-                <Button className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
                   <Save className="h-4 w-4 mr-2" />
                   Save All
                 </Button>
@@ -1762,7 +1762,7 @@ export const AdminPanel = () => {
                     <div>
                       <p className="text-sm font-medium text-slate-600">{stat.label}</p>
                       <p className="text-2xl font-bold text-slate-900">{stat.value}</p>
-                      <p className="text-sm text-emerald-600">{stat.change} from last month</p>
+                      <p className="text-sm text-blue-600">{stat.change} from last month</p>
                     </div>
                     <div className={`bg-${stat.color}-100 p-3 rounded-full`}>
                       <stat.icon className={`h-6 w-6 text-${stat.color}-600`} />
@@ -1780,7 +1780,7 @@ export const AdminPanel = () => {
                 <CardHeader>
                   <div className="flex items-center justify-between">
                     <CardTitle className="text-lg">Navigation</CardTitle>
-                    <Badge className="bg-emerald-100 text-emerald-800">
+                    <Badge className="bg-blue-100 text-blue-800">
                       {pages.find(p => p.id === selectedPage)?.label}
                     </Badge>
                   </div>
@@ -1793,7 +1793,7 @@ export const AdminPanel = () => {
                         onClick={() => setActiveTab(tab.id)}
                         className={`w-full flex items-center px-4 py-3 text-left transition-colors ${
                           activeTab === tab.id
-                            ? 'bg-emerald-50 text-emerald-700 border-r-2 border-emerald-600'
+                            ? 'bg-blue-50 text-blue-700 border-r-2 border-blue-600'
                             : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                         }`}
                       >
@@ -1820,8 +1820,8 @@ export const AdminPanel = () => {
                       {recentBookings.map((booking) => (
                         <div key={booking.id} className="flex items-center justify-between p-4 bg-slate-50 rounded-lg">
                           <div className="flex items-center space-x-4">
-                            <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
-                              <Users className="h-5 w-5 text-emerald-600" />
+                            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
+                              <Users className="h-5 w-5 text-blue-600" />
                             </div>
                             <div>
                               <p className="font-medium text-slate-900">{booking.customer}</p>
@@ -1873,7 +1873,7 @@ export const AdminPanel = () => {
                     <CardContent>
                       <div className="space-y-3">
                         <div className="flex items-center space-x-3">
-                          <div className="w-2 h-2 bg-emerald-500 rounded-full"></div>
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
                           <p className="text-sm text-slate-600">New booking received</p>
                             </div>
                         <div className="flex items-center space-x-3">
@@ -1903,7 +1903,7 @@ export const AdminPanel = () => {
                     <Button 
                       onClick={() => toggleEditMode('hero')}
                       variant={editMode.hero ? "outline" : "default"}
-                      className={editMode.hero ? "text-slate-600" : "bg-emerald-600 hover:bg-emerald-700"}
+                      className={editMode.hero ? "text-slate-600" : "bg-blue-600 hover:bg-blue-700"}
                     >
                       {editMode.hero ? (
                         <>
@@ -2084,7 +2084,7 @@ export const AdminPanel = () => {
                   <Button 
                             onClick={() => saveChanges('hero')}
                             disabled={savingStates.hero}
-                            className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                            className="bg-blue-600 hover:bg-blue-700 text-white"
                           >
                             {savingStates.hero ? (
                               <>
@@ -2126,7 +2126,7 @@ export const AdminPanel = () => {
                     <Button 
                       onClick={() => toggleEditMode('featuredPackages')}
                       variant={editMode.featuredPackages ? "outline" : "default"}
-                      className={editMode.featuredPackages ? "text-slate-600" : "bg-emerald-600 hover:bg-emerald-700"}
+                      className={editMode.featuredPackages ? "text-slate-600" : "bg-blue-600 hover:bg-blue-700"}
                     >
                       {editMode.featuredPackages ? (
                         <>
@@ -2211,7 +2211,7 @@ export const AdminPanel = () => {
                       <div className="flex space-x-3">
                         <Button 
                           onClick={() => saveChanges('featuredPackages')}
-                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                          className="bg-blue-600 hover:bg-blue-700 text-white"
                         >
                           <Save className="h-4 w-4 mr-2" />
                           Save Changes
@@ -2245,7 +2245,7 @@ export const AdminPanel = () => {
                     <Button 
                       onClick={() => toggleEditMode('latestBlogs')}
                       variant={editMode.latestBlogs ? "outline" : "default"}
-                      className={editMode.latestBlogs ? "text-slate-600" : "bg-emerald-600 hover:bg-emerald-700"}
+                      className={editMode.latestBlogs ? "text-slate-600" : "bg-blue-600 hover:bg-blue-700"}
                     >
                       {editMode.latestBlogs ? (
                         <>
@@ -2313,7 +2313,7 @@ export const AdminPanel = () => {
                       <div className="flex space-x-3">
                         <Button 
                           onClick={() => saveChanges('latestBlogs')}
-                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                          className="bg-blue-600 hover:bg-blue-700 text-white"
                         >
                           <Save className="h-4 w-4 mr-2" />
                           Save Changes
@@ -2343,7 +2343,7 @@ export const AdminPanel = () => {
                     <Button 
                       onClick={() => toggleEditMode('whyChooseUs')}
                       variant={editMode.whyChooseUs ? "outline" : "default"}
-                      className={editMode.whyChooseUs ? "text-slate-600" : "bg-emerald-600 hover:bg-emerald-700"}
+                      className={editMode.whyChooseUs ? "text-slate-600" : "bg-blue-600 hover:bg-blue-700"}
                     >
                       {editMode.whyChooseUs ? (
                         <>
@@ -2417,7 +2417,7 @@ export const AdminPanel = () => {
                       <div className="flex space-x-3">
                         <Button 
                           onClick={() => saveChanges('whyChooseUs')}
-                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                          className="bg-blue-600 hover:bg-blue-700 text-white"
                         >
                           <Save className="h-4 w-4 mr-2" />
                           Save Changes
@@ -2447,7 +2447,7 @@ export const AdminPanel = () => {
                     <Button 
                       onClick={() => toggleEditMode('testimonials')}
                       variant={editMode.testimonials ? "outline" : "default"}
-                      className={editMode.testimonials ? "text-slate-600" : "bg-emerald-600 hover:bg-emerald-700"}
+                      className={editMode.testimonials ? "text-slate-600" : "bg-blue-600 hover:bg-blue-700"}
                     >
                       {editMode.testimonials ? (
                         <>
@@ -2525,7 +2525,7 @@ export const AdminPanel = () => {
                       <div className="flex space-x-3">
                         <Button 
                           onClick={() => saveChanges('testimonials')}
-                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                          className="bg-blue-600 hover:bg-blue-700 text-white"
                         >
                           <Save className="h-4 w-4 mr-2" />
                           Save Changes
@@ -2555,7 +2555,7 @@ export const AdminPanel = () => {
                     <Button 
                       onClick={() => toggleEditMode('cta')}
                       variant={editMode.cta ? "outline" : "default"}
-                      className={editMode.cta ? "text-slate-600" : "bg-emerald-600 hover:bg-emerald-700"}
+                      className={editMode.cta ? "text-slate-600" : "bg-blue-600 hover:bg-blue-700"}
                     >
                       {editMode.cta ? (
                         <>
@@ -2627,7 +2627,7 @@ export const AdminPanel = () => {
                       <div className="flex space-x-3">
                         <Button 
                           onClick={() => saveChanges('cta')}
-                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                          className="bg-blue-600 hover:bg-blue-700 text-white"
                         >
                           <Save className="h-4 w-4 mr-2" />
                           Save Changes
@@ -2656,7 +2656,7 @@ export const AdminPanel = () => {
                         <p className="text-sm text-slate-600">Manage all your travel packages and pricing</p>
                       </div>
                         <Button 
-                        className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                        className="bg-blue-600 hover:bg-blue-700 text-white"
                         onClick={() => navigate('/admin/package-management')}
                       >
                         <Globe className="h-4 w-4 mr-2" />
@@ -2690,7 +2690,7 @@ export const AdminPanel = () => {
                                 className="w-full h-32 object-cover"
                               />
                               <div className="absolute top-2 left-2">
-                                <Badge className="bg-emerald-500 text-white text-xs">
+                                <Badge className="bg-blue-500 text-white text-xs">
                                   {pkg.category}
                                 </Badge>
                               </div>
@@ -2765,8 +2765,8 @@ export const AdminPanel = () => {
                       <p className="text-sm font-medium text-slate-600">National</p>
                       <p className="text-2xl font-bold text-slate-900">{destinations.filter(d => d.country === 'India').length}</p>
                     </div>
-                    <div className="bg-emerald-100 p-3 rounded-full">
-                      <Flag className="h-6 w-6 text-emerald-600" />
+                    <div className="bg-blue-100 p-3 rounded-full">
+                      <Flag className="h-6 w-6 text-blue-600" />
                     </div>
                   </div>
                 </CardContent>
@@ -3023,7 +3023,7 @@ export const AdminPanel = () => {
                   <div className="flex space-x-3">
                     <Button 
                       type="submit" 
-                      className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                      className="bg-blue-600 hover:bg-blue-700 text-white"
       
                     >
                       {editingDestination ? (
@@ -3108,7 +3108,7 @@ export const AdminPanel = () => {
                             variant="secondary" 
                             className={`text-xs ${
                               destination.country === 'India' 
-                                ? 'bg-emerald-100 text-emerald-800' 
+                                ? 'bg-blue-100 text-blue-800' 
                                 : 'bg-blue-100 text-blue-800'
                             }`}
                           >

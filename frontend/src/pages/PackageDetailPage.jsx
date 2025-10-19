@@ -47,7 +47,7 @@ export const PackageDetailPage = () => {
               className="w-full h-full object-cover"
             />
             <div className="absolute top-4 left-4">
-              <Badge className="bg-emerald-500 text-white text-sm">
+              <Badge className="bg-blue-500 text-white text-sm">
                 {packageData.category}
               </Badge>
             </div>
@@ -117,8 +117,8 @@ export const PackageDetailPage = () => {
                   <h3 className="text-2xl font-bold text-slate-900 mb-4">Package Highlights</h3>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     {packageData.highlights.map((highlight, index) => (
-                      <div key={index} className="flex items-center space-x-3 p-4 bg-emerald-50 rounded-lg">
-                        <Check className="h-5 w-5 text-emerald-600 flex-shrink-0" />
+                      <div key={index} className="flex items-center space-x-3 p-4 bg-blue-50 rounded-lg">
+                        <Check className="h-5 w-5 text-blue-600 flex-shrink-0" />
                         <span className="text-slate-700">{highlight}</span>
                       </div>
                     ))}
@@ -143,7 +143,7 @@ export const PackageDetailPage = () => {
                       <AccordionItem key={index} value={`day-${day.day}`} className="border rounded-lg">
                         <AccordionTrigger className="px-6 py-4 hover:bg-slate-50">
                           <div className="flex items-center space-x-4">
-                            <div className="bg-emerald-100 text-emerald-800 px-3 py-1 rounded-full text-sm font-semibold">
+                            <div className="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-semibold">
                               Day {day.day}
                             </div>
                             <h4 className="text-lg font-semibold text-left">{day.title}</h4>
@@ -153,7 +153,7 @@ export const PackageDetailPage = () => {
                           <ul className="space-y-3">
                             {day.activities.map((activity, actIndex) => (
                               <li key={actIndex} className="flex items-start space-x-3">
-                                <Clock className="h-4 w-4 text-emerald-600 mt-1 flex-shrink-0" />
+                                <Clock className="h-4 w-4 text-blue-600 mt-1 flex-shrink-0" />
                                 <span className="text-slate-600">{activity}</span>
                               </li>
                             ))}
@@ -172,7 +172,7 @@ export const PackageDetailPage = () => {
                     <ul className="space-y-3">
                       {packageData.included.map((item, index) => (
                         <li key={index} className="flex items-start space-x-3">
-                          <Check className="h-5 w-5 text-emerald-600 mt-0.5 flex-shrink-0" />
+                          <Check className="h-5 w-5 text-blue-600 mt-0.5 flex-shrink-0" />
                           <span className="text-slate-600">{item}</span>
                         </li>
                       ))}
@@ -263,7 +263,7 @@ export const PackageDetailPage = () => {
                   <div className="space-y-4 mb-6">
                     <Button 
                       asChild
-                      className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white py-6 text-lg"
+                      className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white py-6 text-lg"
                     >
                       <Link to={`/book/${packageData.id}`}>
                         Book This Package
@@ -287,15 +287,15 @@ export const PackageDetailPage = () => {
                     <h4 className="font-semibold text-slate-900 mb-4">Why Book With Us?</h4>
                     <ul className="space-y-3 text-sm">
                       <li className="flex items-center space-x-2">
-                        <Shield className="h-4 w-4 text-emerald-600" />
+                        <Shield className="h-4 w-4 text-blue-600" />
                         <span>100% Safe & Secure</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <Award className="h-4 w-4 text-emerald-600" />
+                        <Award className="h-4 w-4 text-blue-600" />
                         <span>Award-Winning Service</span>
                       </li>
                       <li className="flex items-center space-x-2">
-                        <Check className="h-4 w-4 text-emerald-600" />
+                        <Check className="h-4 w-4 text-blue-600" />
                         <span>24/7 Customer Support</span>
                       </li>
                     </ul>

@@ -13,7 +13,8 @@ import AboutPage from "./pages/AboutPage";
 import AdminPanel from "./pages/AdminPanel";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import { Toaster } from "./components/ui/sonner";
+import { Toaster as SonnerToaster } from "./components/ui/sonner";
+import { Toaster } from "./components/ui/toaster";
 import { useScrollToTop } from "./hooks/useScrollToTop";
 import { HomePageProvider } from "./context/HomePageContext";
 import { DestinationsProvider } from "./context/DestinationsContext";
@@ -70,6 +71,7 @@ function AppContent() {
         </Routes>
       </main>
       <Footer />
+      <SonnerToaster />
       <Toaster />
     </>
   );

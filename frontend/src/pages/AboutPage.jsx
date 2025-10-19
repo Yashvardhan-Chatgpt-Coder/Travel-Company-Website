@@ -75,12 +75,12 @@ export const AboutPage = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-emerald-600 to-teal-700 text-white">
+      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             About Wanderlust
           </h1>
-          <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Creating unforgettable travel experiences since 2015. We're passionate about connecting people with the world's most beautiful destinations.
           </p>
         </div>
@@ -91,7 +91,7 @@ export const AboutPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge className="mb-4 bg-emerald-100 text-emerald-800 hover:bg-emerald-100">
+              <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
                 Our Story
               </Badge>
               <h2 className="text-4xl font-bold text-slate-900 mb-6">
@@ -108,7 +108,7 @@ export const AboutPage = () => {
               </p>
               <Button 
                 asChild
-                className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+                className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white"
               >
                 <Link to="/packages">
                   Explore Our Packages
@@ -124,7 +124,7 @@ export const AboutPage = () => {
               />
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
                 <div className="flex items-center space-x-4">
-                  <div className="bg-gradient-to-r from-emerald-500 to-teal-600 p-3 rounded-full">
+                  <div className="bg-gradient-to-r from-blue-500 to-indigo-600 p-3 rounded-full">
                     <Star className="h-6 w-6 text-white" />
                   </div>
                   <div>
@@ -153,7 +153,7 @@ export const AboutPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
               <div key={index} className="text-center">
-                <div className="bg-gradient-to-r from-emerald-500 to-teal-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="bg-gradient-to-r from-blue-500 to-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="h-8 w-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-slate-900 mb-2">{stat.value}</div>
@@ -168,7 +168,7 @@ export const AboutPage = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge className="mb-4 bg-teal-100 text-teal-800 hover:bg-teal-100">
+            <Badge className="mb-4 bg-indigo-100 text-indigo-800 hover:bg-indigo-100">
               Our Values
             </Badge>
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
@@ -183,7 +183,7 @@ export const AboutPage = () => {
             {values.map((value, index) => (
               <Card key={index} className="text-center p-8 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-0">
-                  <div className="bg-gradient-to-r from-emerald-500 to-teal-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="bg-gradient-to-r from-blue-500 to-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
                     <value.icon className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-4">{value.title}</h3>
@@ -223,7 +223,7 @@ export const AboutPage = () => {
                 </div>
                 <CardContent className="p-6">
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{member.name}</h3>
-                  <p className="text-emerald-600 font-semibold mb-4">{member.role}</p>
+                  <p className="text-blue-600 font-semibold mb-4">{member.role}</p>
                   <p className="text-slate-600 text-sm leading-relaxed">{member.bio}</p>
                 </CardContent>
               </Card>
@@ -248,18 +248,18 @@ export const AboutPage = () => {
           </div>
 
           <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-emerald-500 to-teal-600"></div>
+            <div className="absolute left-1/2 transform -translate-x-px h-full w-0.5 bg-gradient-to-b from-blue-500 to-indigo-600"></div>
             <div className="space-y-12">
               {milestones.map((milestone, index) => (
                 <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'justify-start' : 'justify-end'}`}>
                   <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8 text-left'}`}>
                     <div className="bg-white p-6 rounded-xl shadow-lg border border-slate-200">
-                      <div className="text-2xl font-bold text-emerald-600 mb-2">{milestone.year}</div>
+                      <div className="text-2xl font-bold text-blue-600 mb-2">{milestone.year}</div>
                       <h3 className="text-xl font-bold text-slate-900 mb-2">{milestone.title}</h3>
                       <p className="text-slate-600">{milestone.description}</p>
                     </div>
                   </div>
-                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-emerald-500 rounded-full border-4 border-white shadow-lg"></div>
+                  <div className="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-blue-500 rounded-full border-4 border-white shadow-lg"></div>
                 </div>
               ))}
             </div>
@@ -268,12 +268,12 @@ export const AboutPage = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-emerald-600 to-teal-700 text-white">
+      <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Start Your Journey?
           </h2>
-          <p className="text-xl mb-8 text-emerald-100">
+          <p className="text-xl mb-8 text-blue-100">
             Join thousands of travelers who have discovered the world with us. Your perfect adventure awaits.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -281,7 +281,7 @@ export const AboutPage = () => {
               asChild
               size="lg"
               variant="secondary"
-              className="bg-white text-emerald-600 hover:bg-slate-100 px-8 py-4 text-lg rounded-full"
+              className="bg-white text-blue-600 hover:bg-slate-100 px-8 py-4 text-lg rounded-full"
             >
               <Link to="/packages">
                 Browse Packages
@@ -292,7 +292,7 @@ export const AboutPage = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-white text-white hover:bg-white hover:text-emerald-600 px-8 py-4 text-lg rounded-full"
+              className="border-white text-white hover:bg-white hover:text-blue-600 px-8 py-4 text-lg rounded-full"
             >
               <Link to="/contact">
                 Contact Us

@@ -66,8 +66,8 @@ const PackageManagementPage = () => {
     { value: 'pink', label: 'Pink', bg: 'bg-pink-500', bgLight: 'bg-pink-100', text: 'text-pink-700', border: 'border-pink-200' },
     { value: 'indigo', label: 'Indigo', bg: 'bg-indigo-500', bgLight: 'bg-indigo-100', text: 'text-indigo-700', border: 'border-indigo-200' },
     { value: 'yellow', label: 'Yellow', bg: 'bg-yellow-500', bgLight: 'bg-yellow-100', text: 'text-yellow-700', border: 'border-yellow-200' },
-    { value: 'emerald', label: 'Emerald', bg: 'bg-emerald-500', bgLight: 'bg-emerald-100', text: 'text-emerald-700', border: 'border-emerald-200' },
-    { value: 'teal', label: 'Teal', bg: 'bg-teal-500', bgLight: 'bg-teal-100', text: 'text-teal-700', border: 'border-teal-200' },
+    { value: 'blue', label: 'Blue', bg: 'bg-blue-500', bgLight: 'bg-blue-100', text: 'text-blue-700', border: 'border-blue-200' },
+    { value: 'indigo', label: 'Indigo', bg: 'bg-indigo-500', bgLight: 'bg-indigo-100', text: 'text-indigo-700', border: 'border-indigo-200' },
     { value: 'sky', label: 'Sky', bg: 'bg-sky-500', bgLight: 'bg-sky-100', text: 'text-sky-700', border: 'border-sky-200' },
     { value: 'amber', label: 'Amber', bg: 'bg-amber-500', bgLight: 'bg-amber-100', text: 'text-amber-700', border: 'border-amber-200' },
     { value: 'rose', label: 'Rose', bg: 'bg-rose-500', bgLight: 'bg-rose-100', text: 'text-rose-700', border: 'border-rose-200' },
@@ -200,14 +200,14 @@ const PackageManagementPage = () => {
 
   const stats = [
     { label: 'Total Packages', value: packages.length, change: '+2', icon: Globe, color: 'blue' },
-    { label: 'Active Packages', value: packages.filter(p => p.status === 'active').length, change: '+1', icon: TrendingUp, color: 'emerald' },
+    { label: 'Active Packages', value: packages.filter(p => p.status === 'active').length, change: '+1', icon: TrendingUp, color: 'blue' },
     { label: 'Drafts', value: packages.filter(p => p.status === 'draft').length, change: '0', icon: FileText, color: 'yellow' },
     { label: 'Categories', value: categories.length - 1, change: '+1', icon: Filter, color: 'purple' }
   ];
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'active': return 'bg-emerald-100 text-emerald-800';
+      case 'active': return 'bg-blue-100 text-blue-800';
       case 'draft': return 'bg-yellow-100 text-yellow-800';
       default: return 'bg-gray-100 text-gray-800';
     }
@@ -447,7 +447,7 @@ const PackageManagementPage = () => {
     { id: 2, name: 'Cultural & Historical', description: 'Heritage and cultural experience tours', color: 'purple', icon: 'Hash', packagesCount: 8 },
     { id: 3, name: 'Adventure & Nature', description: 'Thrilling outdoor and nature adventures', color: 'green', icon: 'Tag', packagesCount: 15 },
     { id: 4, name: 'City & Urban', description: 'Urban exploration and city experiences', color: 'orange', icon: 'Hash', packagesCount: 10 },
-    { id: 5, name: 'Wildlife & Safari', description: 'Wildlife encounters and safari experiences', color: 'emerald', icon: 'Tag', packagesCount: 6 },
+    { id: 5, name: 'Wildlife & Safari', description: 'Wildlife encounters and safari experiences', color: 'blue', icon: 'Tag', packagesCount: 6 },
     { id: 6, name: 'Luxury & Premium', description: 'High-end luxury travel experiences', color: 'indigo', icon: 'Hash', packagesCount: 4 }
   ];
 
@@ -465,7 +465,7 @@ const PackageManagementPage = () => {
       <div className="min-h-screen bg-slate-50 p-6">
         <div className="max-w-7xl mx-auto">
           <div className="text-center py-20">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-emerald-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
             <p className="text-slate-600">Loading package management...</p>
           </div>
         </div>
@@ -497,7 +497,7 @@ const PackageManagementPage = () => {
                 Add New Category
               </Button>
             <Button 
-                className="bg-emerald-700 hover:bg-emerald-800 text-white"
+                className="bg-blue-700 hover:bg-blue-800 text-white"
                 onClick={() => setShowAddPackageForm(true)}
               >
               <Plus className="h-4 w-4 mr-2" />
@@ -516,7 +516,7 @@ const PackageManagementPage = () => {
                 <div>
                     <p className="text-sm font-medium text-slate-600">{stat.label}</p>
                     <p className="text-2xl font-bold text-slate-900">{stat.value}</p>
-                    <p className="text-sm text-emerald-600">{stat.change} from last month</p>
+                    <p className="text-sm text-blue-600">{stat.change} from last month</p>
                 </div>
                   <div className={`bg-${stat.color}-100 p-3 rounded-full`}>
                     <stat.icon className={`h-6 w-6 text-${stat.color}-600`} />
@@ -840,7 +840,7 @@ const PackageManagementPage = () => {
                         value="normal"
                         checked={newPackage.packageType === 'normal'}
                         onChange={(e) => handleInputChange('packageType', e.target.value)}
-                        className="text-emerald-600 focus:ring-emerald-500"
+                        className="text-blue-600 focus:ring-blue-500"
                       />
                       <span className="text-sm font-medium text-slate-700">Normal Package</span>
                       <span className="text-xs text-slate-500">(Private bookings, flexible dates)</span>
@@ -852,7 +852,7 @@ const PackageManagementPage = () => {
                         value="fixed-departure"
                         checked={newPackage.packageType === 'fixed-departure'}
                         onChange={(e) => handleInputChange('packageType', e.target.value)}
-                        className="text-emerald-600 focus:ring-emerald-500"
+                        className="text-blue-600 focus:ring-blue-500"
                       />
                       <span className="text-sm font-medium text-slate-700">Fixed Departure Package</span>
                       <span className="text-xs text-slate-500">(Group tours, fixed dates)</span>
@@ -1060,7 +1060,7 @@ const PackageManagementPage = () => {
                           value="per-person"
                           checked={newPackage.priceDisplay === 'per-person'}
                           onChange={(e) => handleInputChange('priceDisplay', e.target.value)}
-                          className="text-emerald-600 focus:ring-emerald-500"
+                          className="text-blue-600 focus:ring-blue-500"
                         />
                         <span className="text-sm font-medium text-slate-700">Per Person</span>
                         <span className="text-xs text-slate-500">(e.g., $1299 per person)</span>
@@ -1072,7 +1072,7 @@ const PackageManagementPage = () => {
                           value="per-couple"
                           checked={newPackage.priceDisplay === 'per-couple'}
                           onChange={(e) => handleInputChange('priceDisplay', e.target.value)}
-                          className="text-emerald-600 focus:ring-emerald-500"
+                          className="text-blue-600 focus:ring-blue-500"
                         />
                         <span className="text-sm font-medium text-slate-700">Per Couple</span>
                         <span className="text-xs text-slate-500">(e.g., $1299 per couple)</span>
@@ -1310,7 +1310,7 @@ const PackageManagementPage = () => {
                               value="default"
                               checked={review.profilePicture?.type === 'default'}
                               onChange={(e) => handleReviewProfileChange(index, 'type', e.target.value)}
-                              className="text-emerald-600 focus:ring-emerald-500"
+                              className="text-blue-600 focus:ring-blue-500"
                             />
                             <span className="text-sm text-slate-700">Default Avatar</span>
                           </label>
@@ -1321,7 +1321,7 @@ const PackageManagementPage = () => {
                               value="custom"
                               checked={review.profilePicture?.type === 'custom'}
                               onChange={(e) => handleReviewProfileChange(index, 'type', e.target.value)}
-                              className="text-emerald-600 focus:ring-emerald-500"
+                              className="text-blue-600 focus:ring-blue-500"
                             />
                             <span className="text-sm text-slate-700">Custom Image</span>
                           </label>
@@ -1337,7 +1337,7 @@ const PackageManagementPage = () => {
                                 value="female"
                                 checked={review.profilePicture?.gender === 'female'}
                                 onChange={(e) => handleReviewProfileChange(index, 'gender', e.target.value)}
-                                className="text-emerald-600 focus:ring-emerald-500"
+                                className="text-blue-600 focus:ring-blue-500"
                               />
                               <span className="text-sm text-slate-700">Female</span>
                             </label>
@@ -1348,7 +1348,7 @@ const PackageManagementPage = () => {
                                 value="male"
                                 checked={review.profilePicture?.gender === 'male'}
                                 onChange={(e) => handleReviewProfileChange(index, 'gender', e.target.value)}
-                                className="text-emerald-600 focus:ring-emerald-500"
+                                className="text-blue-600 focus:ring-blue-500"
                               />
                               <span className="text-sm text-slate-700">Male</span>
                             </label>
@@ -1444,7 +1444,7 @@ const PackageManagementPage = () => {
                 >
                   Reset Form
                 </Button>
-                <Button type="submit" className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
                   <Plus className="h-4 w-4 mr-2" />
                   Create Package
                 </Button>
@@ -1541,7 +1541,7 @@ const PackageManagementPage = () => {
                   </div>
 
                   <div className="flex space-x-3">
-                    <Button type="submit" className="bg-emerald-600 hover:bg-emerald-700 text-white">
+                    <Button type="submit" className="bg-blue-600 hover:bg-blue-700 text-white">
                       {editingCategory ? (
                         <>
                           <Save className="h-4 w-4 mr-2" />

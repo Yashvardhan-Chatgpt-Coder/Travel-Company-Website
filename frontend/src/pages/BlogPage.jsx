@@ -48,12 +48,12 @@ export const BlogPage = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-emerald-600 to-teal-700 text-white">
+      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Travel Stories & Tips
           </h1>
-          <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Discover inspiring travel stories, expert tips, and hidden gems from around the world
           </p>
         </div>
@@ -72,7 +72,7 @@ export const BlogPage = () => {
                   className="w-full h-64 lg:h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge className="bg-emerald-500 text-white">
+                  <Badge className="bg-blue-500 text-white">
                     {featuredPost.category}
                   </Badge>
                 </div>
@@ -88,7 +88,7 @@ export const BlogPage = () => {
                     {featuredPost.readTime}
                   </div>
                 </div>
-                <h3 className="text-3xl font-bold text-slate-900 mb-4 group-hover:text-emerald-600 transition-colors">
+                <h3 className="text-3xl font-bold text-slate-900 mb-4 group-hover:text-blue-600 transition-colors">
                   {featuredPost.title}
                 </h3>
                 <p className="text-slate-600 text-lg leading-relaxed mb-6">
@@ -108,7 +108,7 @@ export const BlogPage = () => {
                   </div>
                   <Button 
                     asChild
-                    className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+                    className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white"
                   >
                     <Link to={`/blog/${featuredPost.id}`}>
                       Read More
@@ -190,7 +190,7 @@ export const BlogPage = () => {
                           className="w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300"
                         />
                         <div className="absolute top-4 left-4">
-                          <Badge className="bg-emerald-500 text-white text-xs">
+                          <Badge className="bg-blue-500 text-white text-xs">
                             {post.category}
                           </Badge>
                         </div>
@@ -206,7 +206,7 @@ export const BlogPage = () => {
                             {post.readTime}
                           </div>
                         </div>
-                        <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-emerald-600 transition-colors">
+                        <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">
                           <Link to={`/blog/${post.id}`}>{post.title}</Link>
                         </h3>
                         <p className="text-slate-600 leading-relaxed mb-4">
@@ -225,7 +225,7 @@ export const BlogPage = () => {
                             asChild
                             variant="outline"
                             size="sm"
-                            className="hover:bg-emerald-50 hover:border-emerald-500 hover:text-emerald-600"
+                            className="hover:bg-blue-50 hover:border-blue-500 hover:text-blue-600"
                           >
                             <Link to={`/blog/${post.id}`}>
                               Read More
@@ -244,7 +244,7 @@ export const BlogPage = () => {
               <Button 
                 asChild
                 size="lg"
-                className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-8"
+                className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-8"
               >
                 <Link to="/blog">
                   View More Posts
@@ -264,7 +264,7 @@ export const BlogPage = () => {
                   <Badge 
                     key={index} 
                     variant="outline" 
-                    className="cursor-pointer hover:bg-emerald-50 hover:border-emerald-500 hover:text-emerald-600"
+                    className="cursor-pointer hover:bg-blue-50 hover:border-blue-500 hover:text-blue-600"
                   >
                     <Tag className="h-3 w-3 mr-1" />
                     {tag}
@@ -294,14 +294,14 @@ export const BlogPage = () => {
             </Card>
 
             {/* Newsletter */}
-            <Card className="p-6 bg-gradient-to-br from-emerald-50 to-teal-50">
+            <Card className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50">
               <h3 className="text-xl font-bold text-slate-900 mb-4">Travel Newsletter</h3>
               <p className="text-slate-600 mb-4">
                 Get the latest travel tips, destination guides, and exclusive offers delivered to your inbox.
               </p>
               <div className="space-y-3">
                 <Input placeholder="Your email address" />
-                <Button className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white">
+                <Button className="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white">
                   Subscribe
                 </Button>
               </div>

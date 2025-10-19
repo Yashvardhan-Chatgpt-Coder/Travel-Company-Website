@@ -95,14 +95,14 @@ export const BookingPage = () => {
                 <div key={step} className="flex items-center">
                   <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium ${
                     step <= currentStep 
-                      ? 'bg-emerald-500 text-white' 
+                      ? 'bg-blue-500 text-white' 
                       : 'bg-slate-200 text-slate-600'
                   }`}>
                     {step}
                   </div>
                   {step < 3 && (
                     <div className={`w-12 h-0.5 ${
-                      step < currentStep ? 'bg-emerald-500' : 'bg-slate-200'
+                      step < currentStep ? 'bg-blue-500' : 'bg-slate-200'
                     }`} />
                   )}
                 </div>
@@ -268,12 +268,12 @@ export const BookingPage = () => {
                   {/* Step 3: Payment & Confirmation */}
                   {currentStep === 3 && (
                     <div className="space-y-6">
-                      <Card className="p-4 bg-emerald-50 border-emerald-200">
+                      <Card className="p-4 bg-blue-50 border-blue-200">
                         <div className="flex items-start space-x-3">
-                          <Check className="h-5 w-5 text-emerald-600 mt-0.5" />
+                          <Check className="h-5 w-5 text-blue-600 mt-0.5" />
                           <div>
-                            <h4 className="font-semibold text-emerald-900 mb-2">Booking Summary</h4>
-                            <div className="text-sm text-emerald-700 space-y-1">
+                            <h4 className="font-semibold text-blue-900 mb-2">Booking Summary</h4>
+                            <div className="text-sm text-blue-700 space-y-1">
                               <p><strong>Name:</strong> {formData.firstName} {formData.lastName}</p>
                               <p><strong>Email:</strong> {formData.email}</p>
                               <p><strong>Travelers:</strong> {formData.travelers} people</p>
@@ -323,7 +323,7 @@ export const BookingPage = () => {
                             onCheckedChange={(checked) => handleInputChange('agreeTerms', checked)}
                           />
                           <Label htmlFor="agreeTerms" className="text-sm">
-                            I agree to the <a href="#" className="text-emerald-600 hover:underline">Terms and Conditions</a> and <a href="#" className="text-emerald-600 hover:underline">Privacy Policy</a> *
+                            I agree to the <a href="#" className="text-blue-600 hover:underline">Terms and Conditions</a> and <a href="#" className="text-blue-600 hover:underline">Privacy Policy</a> *
                           </Label>
                         </div>
                         <div className="flex items-center space-x-2">
@@ -354,14 +354,14 @@ export const BookingPage = () => {
                       <Button 
                         type="button" 
                         onClick={handleNextStep}
-                        className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+                        className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white"
                       >
                         Next Step
                       </Button>
                     ) : (
                       <Button 
                         type="submit"
-                        className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white"
+                        className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white"
                       >
                         <CreditCard className="h-4 w-4 mr-2" />
                         Complete Booking
@@ -385,7 +385,7 @@ export const BookingPage = () => {
                     className="w-full h-32 object-cover rounded-lg mb-4"
                   />
                   <div className="space-y-3">
-                    <Badge className="bg-emerald-500 text-white">
+                    <Badge className="bg-blue-500 text-white">
                       {packageData.category}
                     </Badge>
                     <h3 className="font-bold text-slate-900">{packageData.title}</h3>
@@ -431,7 +431,7 @@ export const BookingPage = () => {
                       </div>
                     </div>
                     {packageData.originalPrice > packageData.price && (
-                      <div className="text-sm text-emerald-600 font-medium">
+                      <div className="text-sm text-blue-600 font-medium">
                         You save ${(packageData.originalPrice - packageData.price) * formData.travelers}!
                       </div>
                     )}
@@ -445,11 +445,11 @@ export const BookingPage = () => {
                   <h3 className="font-bold text-slate-900 mb-4">Need Help?</h3>
                   <div className="space-y-3 text-sm">
                     <div className="flex items-center">
-                      <Phone className="h-4 w-4 mr-2 text-emerald-600" />
+                      <Phone className="h-4 w-4 mr-2 text-blue-600" />
                       <span>+1 (555) 123-4567</span>
                     </div>
                     <div className="flex items-center">
-                      <Mail className="h-4 w-4 mr-2 text-emerald-600" />
+                      <Mail className="h-4 w-4 mr-2 text-blue-600" />
                       <span>support@wanderlust.com</span>
                     </div>
                     <p className="text-slate-600 mt-4">

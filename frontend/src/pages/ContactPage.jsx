@@ -36,12 +36,12 @@ export const ContactPage = () => {
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-r from-emerald-600 to-teal-700 text-white">
+      <section className="relative py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             Contact Us
           </h1>
-          <p className="text-xl text-emerald-100 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Ready to start your next adventure? We're here to help you plan the perfect trip. 
             Get in touch with our travel experts today.
           </p>
@@ -55,11 +55,11 @@ export const ContactPage = () => {
             {contactInfo.map((info, index) => (
               <Card key={index} className="text-center p-6 hover:shadow-lg transition-shadow duration-300">
                 <CardContent className="p-0">
-                  <div className="bg-gradient-to-r from-emerald-500 to-teal-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="bg-gradient-to-r from-blue-500 to-indigo-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                     <info.icon className="h-8 w-8 text-white" />
                   </div>
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{info.title}</h3>
-                  <p className="text-lg text-emerald-600 font-semibold mb-2">{info.details}</p>
+                  <p className="text-lg text-blue-600 font-semibold mb-2">{info.details}</p>
                   <p className="text-slate-600">{info.description}</p>
                 </CardContent>
               </Card>
@@ -87,7 +87,7 @@ export const ContactPage = () => {
                       </label>
                       <input
                         type="text"
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         placeholder="Enter your first name"
                       />
                     </div>
@@ -97,7 +97,7 @@ export const ContactPage = () => {
                       </label>
                       <input
                         type="text"
-                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                        className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                         placeholder="Enter your last name"
                       />
                     </div>
@@ -109,7 +109,7 @@ export const ContactPage = () => {
                     </label>
                     <input
                       type="email"
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Enter your email address"
                     />
                   </div>
@@ -120,7 +120,7 @@ export const ContactPage = () => {
                     </label>
                     <input
                       type="text"
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="What's this about?"
                     />
                   </div>
@@ -131,7 +131,7 @@ export const ContactPage = () => {
                     </label>
                     <textarea
                       rows={6}
-                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-none"
+                      className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-none"
                       placeholder="Tell us about your travel plans or any questions you have..."
                     ></textarea>
                   </div>
@@ -139,7 +139,7 @@ export const ContactPage = () => {
                   <div className="text-center">
                     <Button 
                       size="lg"
-                      className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 text-white px-8 py-4 text-lg rounded-full"
+                      className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-8 py-4 text-lg rounded-full"
                     >
                       <Send className="mr-2 h-5 w-5" />
                       Send Message
