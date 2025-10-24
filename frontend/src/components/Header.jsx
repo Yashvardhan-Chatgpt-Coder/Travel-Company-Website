@@ -100,7 +100,7 @@ export const Header = () => {
   ];
 
   return (
-    <header className="bg-white shadow-sm border-b sticky top-0 z-50">
+      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
       {/* Top bar */}
       <div className="bg-slate-50 border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -200,8 +200,16 @@ export const Header = () => {
             </NavigationMenu>
           </nav>
 
-          {/* CTA Button */}
+          {/* CTA Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <Button asChild
+              className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white px-6 shadow-lg hover:shadow-green-500/20 transition-all duration-300"
+            >
+              <Link to="/payment">
+                Pay Now
+              </Link>
+            </Button>
+            
             <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
               <DialogTrigger asChild>
                 <Button 
@@ -210,6 +218,9 @@ export const Header = () => {
                   Book Now
                 </Button>
               </DialogTrigger>
+            </Dialog>
+            
+            <Dialog open={isBookingOpen} onOpenChange={setIsBookingOpen}>
               <DialogContent className="sm:max-w-[550px] max-w-[95vw] max-h-[90vh] overflow-y-auto p-4 sm:p-6">
                 <DialogHeader>
                   <DialogTitle className="text-xl sm:text-2xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
