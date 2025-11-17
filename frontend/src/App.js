@@ -3,7 +3,12 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import HomePage from "./pages/HomePage";
+import Hero2Page from "./pages/Hero2Page";
+import Hero3Page from "./pages/Hero3Page";
+import Hero4Page from "./pages/Hero4Page";
 import PackagesPage from "./pages/PackagesPage";
+import CategoryPage from "./pages/CategoryPage";
+import Category2Page from "./pages/Category2Page";
 import PackageDetailPage from "./pages/PackageDetailPage";
 import BlogPage from "./pages/BlogPage";
 import BlogPostPage from "./pages/BlogPostPage";
@@ -59,7 +64,12 @@ function AppContent() {
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/hero2" element={<Hero2Page />} />
+          <Route path="/hero3" element={<Hero3Page />} />
+          <Route path="/hero4" element={<Hero4Page />} />
           <Route path="/packages" element={<PackagesPage />} />
+          <Route path="/category" element={<CategoryPage />} />
+          <Route path="/category2" element={<Category2Page />} />
           <Route path="/packages/:id" element={<PackageDetailPage />} />
           <Route path="/blog" element={<BlogPage />} />
           <Route path="/blog/:id" element={<BlogPostPage />} />

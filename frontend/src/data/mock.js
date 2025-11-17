@@ -237,6 +237,384 @@ export const travelPackages = [
         ]
       }
     ]
+  },
+  {
+    id: 5,
+    title: "Thailand Beach Paradise",
+    destination: "Phuket, Thailand",
+    duration: "5 Days, 4 Nights",
+    price: 899,
+    originalPrice: 1199,
+    rating: 4.6,
+    reviews: 98,
+    image: "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1552465011-b4e21bf6e79a?w=800&q=80",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+      "https://images.unsplash.com/photo-1570789210967-2cac133a0893?w=800&q=80"
+    ],
+    category: "Beach & Relaxation",
+    highlights: [
+      "Crystal clear waters",
+      "Island hopping tours",
+      "Traditional Thai massage",
+      "Fresh seafood dining"
+    ],
+    included: [
+      "Beachfront resort accommodation",
+      "Daily breakfast",
+      "Island hopping tours",
+      "Airport transfers",
+      "Traditional Thai cooking class"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Phuket",
+        activities: [
+          "Airport pickup and transfer",
+          "Resort check-in",
+          "Beach relaxation",
+          "Welcome dinner"
+        ]
+      }
+    ]
+  },
+  {
+    id: 6,
+    title: "European Grand Tour",
+    destination: "Paris, Rome & Barcelona",
+    duration: "12 Days, 11 Nights",
+    price: 2899,
+    originalPrice: 3499,
+    rating: 4.8,
+    reviews: 167,
+    image: "https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=800&q=80",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80",
+      "https://images.unsplash.com/photo-1539650116574-75c0c6d73d0e?w=800&q=80"
+    ],
+    category: "Cultural & Historical",
+    highlights: [
+      "Eiffel Tower visit",
+      "Colosseum tour",
+      "Sagrada Familia exploration",
+      "Wine tasting sessions"
+    ],
+    included: [
+      "4-star hotel accommodation",
+      "Daily breakfast",
+      "City tours with guides",
+      "Train tickets between cities",
+      "Museum entrance fees"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Paris",
+        activities: [
+          "Airport transfer",
+          "Hotel check-in",
+          "Seine River cruise",
+          "Welcome dinner"
+        ]
+      }
+    ]
+  },
+  {
+    id: 7,
+    title: "African Safari Adventure",
+    destination: "Serengeti, Tanzania",
+    duration: "9 Days, 8 Nights",
+    price: 3999,
+    originalPrice: 4599,
+    rating: 4.9,
+    reviews: 76,
+    image: "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80"
+    ],
+    category: "Adventure & Nature",
+    highlights: [
+      "Big Five wildlife viewing",
+      "Hot air balloon safari",
+      "Maasai village visit",
+      "Sunrise game drives"
+    ],
+    included: [
+      "Luxury safari lodge",
+      "All meals included",
+      "Professional safari guide",
+      "Game drive vehicles",
+      "Park entrance fees"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Tanzania",
+        activities: [
+          "Airport pickup",
+          "Lodge check-in",
+          "Safari briefing",
+          "Evening game drive"
+        ]
+      }
+    ]
+  },
+  {
+    id: 8,
+    title: "Dubai Luxury Experience",
+    destination: "Dubai, UAE",
+    duration: "6 Days, 5 Nights",
+    price: 2199,
+    originalPrice: 2699,
+    rating: 4.7,
+    reviews: 134,
+    image: "https://images.unsplash.com/photo-1512453979798-5ea2fbec9b90?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1512453979798-5ea2fbec9b90?w=800&q=80",
+      "https://images.unsplash.com/photo-1539650116574-75c0c6d73d0e?w=800&q=80",
+      "https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=800&q=80"
+    ],
+    category: "Luxury & Romance",
+    highlights: [
+      "Burj Khalifa observation deck",
+      "Desert safari adventure",
+      "Luxury shopping malls",
+      "Traditional dhow cruise"
+    ],
+    included: [
+      "5-star hotel accommodation",
+      "Daily breakfast",
+      "Desert safari with dinner",
+      "City tour with guide",
+      "Airport transfers"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Dubai",
+        activities: [
+          "Airport pickup",
+          "Hotel check-in",
+          "Dubai Mall visit",
+          "Burj Khalifa visit"
+        ]
+      }
+    ]
+  },
+  {
+    id: 9,
+    title: "Caribbean Island Hopping",
+    destination: "Barbados & St. Lucia",
+    duration: "8 Days, 7 Nights",
+    price: 1799,
+    originalPrice: 2199,
+    rating: 4.5,
+    reviews: 87,
+    image: "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80",
+      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80",
+      "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&q=80"
+    ],
+    category: "Beach & Relaxation",
+    highlights: [
+      "Crystal clear turquoise waters",
+      "Island hopping adventures",
+      "Snorkeling and diving",
+      "Tropical beach relaxation"
+    ],
+    included: [
+      "Beachfront resort accommodation",
+      "Daily breakfast",
+      "Island hopping tours",
+      "Snorkeling equipment",
+      "Airport transfers"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Barbados",
+        activities: [
+          "Airport pickup",
+          "Resort check-in",
+          "Beach relaxation",
+          "Welcome dinner"
+        ]
+      }
+    ]
+  },
+  {
+    id: 10,
+    title: "Iceland Northern Lights",
+    destination: "Reykjavik, Iceland",
+    duration: "6 Days, 5 Nights",
+    price: 1599,
+    originalPrice: 1999,
+    rating: 4.8,
+    reviews: 112,
+    image: "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1531366936337-7c912a4589a7?w=800&q=80",
+      "https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=800&q=80",
+      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80"
+    ],
+    category: "Adventure & Nature",
+    highlights: [
+      "Northern Lights viewing",
+      "Blue Lagoon experience",
+      "Glacier hiking",
+      "Geyser and waterfall tours"
+    ],
+    included: [
+      "Hotel accommodation",
+      "Daily breakfast",
+      "Northern Lights tour",
+      "Blue Lagoon entry",
+      "Airport transfers"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Reykjavik",
+        activities: [
+          "Airport pickup",
+          "Hotel check-in",
+          "City tour",
+          "Blue Lagoon visit"
+        ]
+      }
+    ]
+  },
+  {
+    id: 11,
+    title: "Greek Islands Discovery",
+    destination: "Santorini & Mykonos, Greece",
+    duration: "7 Days, 6 Nights",
+    price: 1399,
+    originalPrice: 1699,
+    rating: 4.7,
+    reviews: 145,
+    image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?w=800&q=80",
+      "https://images.unsplash.com/photo-1552832230-c0197dd311b5?w=800&q=80",
+      "https://images.unsplash.com/photo-1502602898536-47ad22581b52?w=800&q=80"
+    ],
+    category: "Cultural & Historical",
+    highlights: [
+      "Santorini sunset views",
+      "Mykonos windmills",
+      "Ancient Greek history",
+      "Mediterranean cuisine"
+    ],
+    included: [
+      "Hotel accommodation",
+      "Daily breakfast",
+      "Ferry transfers between islands",
+      "Guided tours",
+      "Airport transfers"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Santorini",
+        activities: [
+          "Airport pickup",
+          "Hotel check-in",
+          "Oia sunset viewing",
+          "Welcome dinner"
+        ]
+      }
+    ]
+  },
+  {
+    id: 12,
+    title: "Moroccan Desert Adventure",
+    destination: "Marrakech & Sahara, Morocco",
+    duration: "8 Days, 7 Nights",
+    price: 1199,
+    originalPrice: 1499,
+    rating: 4.6,
+    reviews: 93,
+    image: "https://images.unsplash.com/photo-1539650116574-75c0c6d73d0e?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1539650116574-75c0c6d73d0e?w=800&q=80",
+      "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?w=800&q=80",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80"
+    ],
+    category: "Adventure & Nature",
+    highlights: [
+      "Sahara Desert camping",
+      "Camel trekking",
+      "Atlas Mountains hiking",
+      "Traditional Berber culture"
+    ],
+    included: [
+      "Desert camp accommodation",
+      "All meals included",
+      "Camel trekking experience",
+      "Professional guide",
+      "Airport transfers"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Marrakech",
+        activities: [
+          "Airport pickup",
+          "Hotel check-in",
+          "Jemaa el-Fnaa square",
+          "Traditional dinner"
+        ]
+      }
+    ]
+  },
+  {
+    id: 13,
+    title: "Hawaiian Paradise Retreat",
+    destination: "Maui, Hawaii",
+    duration: "6 Days, 5 Nights",
+    price: 1999,
+    originalPrice: 2399,
+    rating: 4.8,
+    reviews: 156,
+    image: "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&q=80",
+    gallery: [
+      "https://images.unsplash.com/photo-1602002418082-a4443e081dd1?w=800&q=80",
+      "https://images.unsplash.com/photo-1573843981267-be1999ff37cd?w=800&q=80",
+      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80"
+    ],
+    category: "Beach & Relaxation",
+    highlights: [
+      "Volcanic black sand beaches",
+      "Road to Hana adventure",
+      "Traditional luau experience",
+      "Snorkeling at Molokini"
+    ],
+    included: [
+      "Beachfront resort accommodation",
+      "Daily breakfast",
+      "Road to Hana tour",
+      "Snorkeling equipment",
+      "Airport transfers"
+    ],
+    itinerary: [
+      {
+        day: 1,
+        title: "Arrival in Maui",
+        activities: [
+          "Airport pickup",
+          "Resort check-in",
+          "Beach relaxation",
+          "Welcome luau dinner"
+        ]
+      }
+    ]
   }
 ];
 

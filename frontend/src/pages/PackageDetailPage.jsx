@@ -18,7 +18,7 @@ export const PackageDetailPage = () => {
   const packageData = travelPackages.find(pkg => pkg.id === parseInt(id));
   const relatedPackages = travelPackages.filter(pkg => 
     pkg.id !== parseInt(id) && pkg.category === packageData?.category
-  ).slice(0, 3);
+  ).slice(0, 6);
   
   if (!packageData) {
     return (
@@ -39,7 +39,7 @@ export const PackageDetailPage = () => {
     <div className="min-h-screen bg-white">
       {/* Image Gallery */}
       <section className="relative">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 h-72 lg:h-[380px]">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-2 h-60 lg:h-[350px]">
           <div className="lg:col-span-2 relative overflow-hidden rounded-lg">
             <img 
               src={packageData.gallery[selectedImage]} 
@@ -109,7 +109,7 @@ export const PackageDetailPage = () => {
                 <TabsTrigger value="overview">Overview</TabsTrigger>
                 <TabsTrigger value="itinerary">Itinerary</TabsTrigger>
                 <TabsTrigger value="included">Included</TabsTrigger>
-                <TabsTrigger value="reviews">Reviews</TabsTrigger>
+                <TabsTrigger value="packages">Other Packages</TabsTrigger>
               </TabsList>
 
               <TabsContent value="overview" className="space-y-6 mt-6">
@@ -201,39 +201,106 @@ export const PackageDetailPage = () => {
                     </div>
                   </div>
                 </div>
+
+                {/* Not Included Section */}
+                <div className="mt-12">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Not Included</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <ul className="space-y-3">
+                      <li className="flex items-start space-x-3">
+                        <div className="h-5 w-5 rounded-full border-2 border-red-500 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <div className="h-2 w-2 bg-red-500 rounded-full"></div>
+                        </div>
+                        <span className="text-slate-600">International flights</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <div className="h-5 w-5 rounded-full border-2 border-red-500 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <div className="h-2 w-2 bg-red-500 rounded-full"></div>
+                        </div>
+                        <span className="text-slate-600">Travel insurance</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <div className="h-5 w-5 rounded-full border-2 border-red-500 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <div className="h-2 w-2 bg-red-500 rounded-full"></div>
+                        </div>
+                        <span className="text-slate-600">Personal expenses</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <div className="h-5 w-5 rounded-full border-2 border-red-500 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <div className="h-2 w-2 bg-red-500 rounded-full"></div>
+                        </div>
+                        <span className="text-slate-600">Visa fees</span>
+                      </li>
+                    </ul>
+                    <ul className="space-y-3">
+                      <li className="flex items-start space-x-3">
+                        <div className="h-5 w-5 rounded-full border-2 border-red-500 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <div className="h-2 w-2 bg-red-500 rounded-full"></div>
+                        </div>
+                        <span className="text-slate-600">Optional activities</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <div className="h-5 w-5 rounded-full border-2 border-red-500 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <div className="h-2 w-2 bg-red-500 rounded-full"></div>
+                        </div>
+                        <span className="text-slate-600">Tips and gratuities</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <div className="h-5 w-5 rounded-full border-2 border-red-500 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <div className="h-2 w-2 bg-red-500 rounded-full"></div>
+                        </div>
+                        <span className="text-slate-600">Alcoholic beverages</span>
+                      </li>
+                      <li className="flex items-start space-x-3">
+                        <div className="h-5 w-5 rounded-full border-2 border-red-500 flex items-center justify-center mt-0.5 flex-shrink-0">
+                          <div className="h-2 w-2 bg-red-500 rounded-full"></div>
+                        </div>
+                        <span className="text-slate-600">Laundry services</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </TabsContent>
 
-              <TabsContent value="reviews" className="mt-6">
+              <TabsContent value="packages" className="mt-6">
                 <div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Traveler Reviews</h3>
-                  {packageTestimonials.length > 0 ? (
-                    <div className="space-y-6">
-                      {packageTestimonials.map((review) => (
-                        <Card key={review.id} className="p-6">
-                          <CardContent className="p-0">
-                            <div className="flex items-center mb-4">
-                              <img 
-                                src={review.image} 
-                                alt={review.name}
-                                className="w-12 h-12 rounded-full object-cover mr-4"
-                              />
-                              <div className="flex-1">
-                                <h4 className="font-semibold text-slate-900">{review.name}</h4>
-                                <p className="text-sm text-slate-500">{review.location}</p>
-                              </div>
-                              <div className="flex items-center">
-                                {[...Array(review.rating)].map((_, i) => (
-                                  <Star key={i} className="h-4 w-4 fill-yellow-400 text-yellow-400" />
-                                ))}
-                              </div>
+                  <h3 className="text-2xl font-bold text-slate-900 mb-6">Similar Packages</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {relatedPackages.map((pkg) => (
+                      <Card key={pkg.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300 group">
+                        <img 
+                          src={pkg.image} 
+                          alt={pkg.title}
+                          className="w-full h-48 object-cover"
+                        />
+                        <CardContent className="p-4">
+                          <div className="flex items-center text-slate-500 text-sm mb-2">
+                            <MapPin className="h-4 w-4 mr-1" />
+                            {pkg.destination}
+                          </div>
+                          <h4 className="font-semibold text-slate-900 mb-2 line-clamp-2 group-hover:text-blue-600 transition-colors">{pkg.title}</h4>
+                          <div className="flex items-center space-x-1 mb-3">
+                            <Star className="h-4 w-4 fill-yellow-400 text-yellow-400" />
+                            <span className="text-sm font-medium">{pkg.rating}</span>
+                            <span className="text-sm text-slate-500">({pkg.reviews})</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <div>
+                              <span className="text-lg font-bold text-slate-900">${pkg.price}</span>
+                              {pkg.originalPrice > pkg.price && (
+                                <span className="text-sm text-slate-500 line-through ml-2">${pkg.originalPrice}</span>
+                              )}
                             </div>
-                            <p className="text-slate-600 leading-relaxed">"{review.text}"</p>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-                  ) : (
-                    <p className="text-slate-600">No reviews yet for this package.</p>
+                            <Button asChild size="sm" className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white">
+                              <Link to={`/packages/${pkg.id}`}>View Details</Link>
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                  {relatedPackages.length === 0 && (
+                    <p className="text-slate-600 text-center py-8">No similar packages found.</p>
                   )}
                 </div>
               </TabsContent>
@@ -270,17 +337,6 @@ export const PackageDetailPage = () => {
                         <ArrowRight className="ml-2 h-5 w-5" />
                       </Link>
                     </Button>
-                    
-                    <div className="grid grid-cols-2 gap-2">
-                      <Button variant="outline" className="text-sm">
-                        <Calendar className="h-4 w-4 mr-2" />
-                        Check Dates
-                      </Button>
-                      <Button variant="outline" className="text-sm">
-                        <Users className="h-4 w-4 mr-2" />
-                        Group Size
-                      </Button>
-                    </div>
                   </div>
 
                   <div className="border-t pt-6">
@@ -306,32 +362,100 @@ export const PackageDetailPage = () => {
           </div>
         </div>
 
-        {/* Related Packages */}
-        {relatedPackages.length > 0 && (
-          <section className="mt-16 pt-16 border-t">
-            <h2 className="text-3xl font-bold text-slate-900 mb-8">Similar Packages</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {relatedPackages.map((pkg) => (
-                <Card key={pkg.id} className="overflow-hidden hover:shadow-lg transition-shadow duration-300">
-                  <img 
-                    src={pkg.image} 
-                    alt={pkg.title}
-                    className="w-full h-48 object-cover"
-                  />
-                  <CardContent className="p-4">
-                    <h3 className="font-semibold text-slate-900 mb-2">{pkg.title}</h3>
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-bold text-slate-900">${pkg.price}</span>
-                      <Button asChild size="sm" variant="outline">
-                        <Link to={`/packages/${pkg.id}`}>View Details</Link>
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-        )}
+        {/* Terms and Conditions Section */}
+        <section className="mt-16 pt-16 border-t border-slate-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="text-3xl font-bold text-slate-900 mb-8">Terms and Conditions</h2>
+            
+            <Accordion type="single" collapsible className="space-y-4">
+              <AccordionItem value="booking" className="border rounded-lg">
+                <AccordionTrigger className="px-6 py-4 hover:bg-slate-50">
+                  <h3 className="text-xl font-semibold text-slate-900 text-left">Booking and Payment</h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <ul className="space-y-2 text-slate-600">
+                    <li>• A deposit of 30% is required to confirm your booking</li>
+                    <li>• Full payment must be completed 30 days before departure</li>
+                    <li>• All prices are in USD and include taxes unless otherwise stated</li>
+                    <li>• Payment can be made via credit card, bank transfer, or PayPal</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="cancellation" className="border rounded-lg">
+                <AccordionTrigger className="px-6 py-4 hover:bg-slate-50">
+                  <h3 className="text-xl font-semibold text-slate-900 text-left">Cancellation Policy</h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <ul className="space-y-2 text-slate-600">
+                    <li>• Cancellation 60+ days before departure: Full refund minus $100 processing fee</li>
+                    <li>• Cancellation 30-59 days before departure: 75% refund</li>
+                    <li>• Cancellation 15-29 days before departure: 50% refund</li>
+                    <li>• Cancellation less than 15 days: No refund</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="documents" className="border rounded-lg">
+                <AccordionTrigger className="px-6 py-4 hover:bg-slate-50">
+                  <h3 className="text-xl font-semibold text-slate-900 text-left">Travel Documents</h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <ul className="space-y-2 text-slate-600">
+                    <li>• Valid passport required (minimum 6 months validity)</li>
+                    <li>• Visa requirements vary by destination - check with embassy</li>
+                    <li>• Travel insurance is strongly recommended</li>
+                    <li>• All travelers must provide accurate personal information</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="health" className="border rounded-lg">
+                <AccordionTrigger className="px-6 py-4 hover:bg-slate-50">
+                  <h3 className="text-xl font-semibold text-slate-900 text-left">Health and Safety</h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <ul className="space-y-2 text-slate-600">
+                    <li>• Participants must be in good physical condition for adventure activities</li>
+                    <li>• Medical conditions must be disclosed before booking</li>
+                    <li>• Follow all safety instructions provided by guides</li>
+                    <li>• Company is not liable for personal injury due to negligence</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="force-majeure" className="border rounded-lg">
+                <AccordionTrigger className="px-6 py-4 hover:bg-slate-50">
+                  <h3 className="text-xl font-semibold text-slate-900 text-left">Force Majeure</h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <ul className="space-y-2 text-slate-600">
+                    <li>• Tours may be modified or cancelled due to weather, natural disasters, or political unrest</li>
+                    <li>• Alternative arrangements will be provided when possible</li>
+                    <li>• Refunds will be processed according to circumstances</li>
+                    <li>• Travel insurance is recommended to cover unforeseen events</li>
+                  </ul>
+                </AccordionContent>
+              </AccordionItem>
+
+              <AccordionItem value="important" className="border rounded-lg">
+                <AccordionTrigger className="px-6 py-4 hover:bg-slate-50">
+                  <h3 className="text-xl font-semibold text-slate-900 text-left">Important Notes</h3>
+                </AccordionTrigger>
+                <AccordionContent className="px-6 pb-4">
+                  <div className="bg-blue-50 p-6 rounded-lg">
+                    <p className="text-slate-600 leading-relaxed">
+                      By booking this package, you agree to these terms and conditions. We reserve the right to modify 
+                      itineraries due to local conditions while maintaining the quality of your experience. For any 
+                      questions or clarifications, please contact our customer service team.
+                    </p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            </Accordion>
+          </div>
+        </section>
+
       </div>
     </div>
   );

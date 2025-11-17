@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Star, MapPin, Calendar, Users, ArrowRight, Shield, Award, Globe, Clock } from 'lucide-react';
+import { Star, MapPin, Calendar, Users, ArrowRight, Shield, Award, Globe, Clock, Search } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Badge } from '../components/ui/badge';
@@ -10,9 +10,19 @@ import { useHomePage } from '../context/HomePageContext';
 
 export const HomePage = () => {
   const { homePageData } = useHomePage();
+  const [headerHeight, setHeaderHeight] = useState(0);
   
 
   
+  useEffect(() => {
+    const measure = () => {
+      const header = document.getElementById('site-header');
+      setHeaderHeight(header ? header.offsetHeight : 0);
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
   // Get featured packages based on packageIds from context
   const featuredPackages = homePageData.featuredPackages.packageIds
     .map(id => travelPackages.find(pkg => pkg.id === id))
@@ -33,65 +43,56 @@ export const HomePage = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-900/70 to-slate-800/70 z-10"></div>
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: `url('${homePageData.hero.backgroundImage}')`
-          }}
-        ></div>
-        
-        <div className="relative z-20 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            {homePageData.hero.title.split(' ').slice(0, -1).join(' ')}
-            <span className="block bg-gradient-to-r from-blue-400 to-indigo-400 bg-clip-text text-transparent">
-              {homePageData.hero.title.split(' ').slice(-1)[0]}
-            </span>
+      <section id="hero"
+        className="relative w-full bg-cover bg-center bg-no-repeat flex items-center justify-center"
+        style={{ 
+          backgroundImage: "url('/Home Hero/Hero BG.png')",
+          height: "720px",
+          marginTop: headerHeight ? `-${headerHeight}px` : undefined,
+          paddingTop: headerHeight ? `${headerHeight}px` : undefined
+        }}
+      >
+        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="relative z-10 text-center text-white max-w-6xl mx-auto px-4 sm:px-6 -mt-10 sm:-mt-20">
+          <h1 className="mb-4 sm:mb-6 text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight sm:leading-none" style={{ fontFamily: 'Permanent Marker, cursive', fontWeight: 'normal' }}>
+            Because Travel Should Feel Effortless
           </h1>
-          <p className="text-xl md:text-2xl mb-8 text-slate-200 max-w-3xl mx-auto leading-relaxed">
-            {homePageData.hero.subtitle}
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 leading-relaxed max-w-2xl sm:max-w-3xl mx-auto px-2">
+            Discover amazing destinations and create unforgettable memories.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-row gap-3 sm:gap-4 justify-center mb-6 sm:mb-8 px-4">
             <Button 
               asChild
-              size="lg"
-              className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white px-8 py-4 text-lg rounded-full shadow-xl transform hover:scale-105 transition-all duration-200"
+              size="default"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 sm:py-2 text-sm sm:text-base flex-1 sm:flex-none"
             >
-              <Link to={homePageData.hero.ctaLink}>
-                {homePageData.hero.ctaText}
-                <ArrowRight className="ml-2 h-5 w-5" />
+              <Link to="/packages">
+                Explore Packages
+                <ArrowRight className="ml-2 h-3 w-3 sm:h-4 sm:w-4" />
               </Link>
             </Button>
             <Button 
+              asChild
               variant="outline"
-              size="lg"
-              className="border-white text-white hover:bg-white hover:text-slate-900 px-8 py-4 text-lg rounded-full backdrop-blur-sm bg-white/10"
-              onClick={() => {
-                if (homePageData.hero.watchVideoLink && homePageData.hero.watchVideoLink !== '#') {
-                  if (homePageData.hero.watchVideoLink.startsWith('http')) {
-                    window.open(homePageData.hero.watchVideoLink, '_blank');
-                  } else {
-                    window.location.href = homePageData.hero.watchVideoLink;
-                  }
-                }
-              }}
+              size="default"
+              className="border-white text-white hover:bg-white hover:text-slate-900 px-4 sm:px-6 py-2 sm:py-2 text-sm sm:text-base flex-1 sm:flex-none"
             >
-              {homePageData.hero.watchVideoText}
+              <Link to="/about">
+                Learn More
+              </Link>
             </Button>
           </div>
           
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-16 border-t border-white/20">
-            {homePageData.hero.stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                {React.createElement(getIconComponent(stat.icon), {
-                  className: "h-8 w-8 mx-auto mb-2 text-blue-400"
-                })}
-                <div className="text-3xl font-bold mb-1">{stat.value}</div>
-                <div className="text-slate-300 text-sm">{stat.label}</div>
-              </div>
-            ))}
+          {/* Search Bar */}
+          <div className="w-full sm:max-w-md sm:mx-auto px-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 sm:h-5 sm:w-5 text-slate-500 z-10" />
+              <input
+                type="text"
+                placeholder="Search destinations..."
+                className="w-full pl-8 sm:pl-10 pr-4 sm:pr-6 py-2 sm:py-2 text-sm sm:text-base bg-white/95 backdrop-blur-sm border border-white/50 rounded-lg text-slate-900 placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-all duration-300 shadow-lg"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -568,8 +569,11 @@ export const HomePage = () => {
       </section>
 
       {/* Featured Packages - Section 4 */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section 
+        className="py-20 bg-cover bg-center bg-no-repeat relative"
+        style={{ backgroundImage: "url('/Abstract background of weathered wood in blue and red tones.jpg')" }}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <Badge className="mb-4 bg-blue-100 text-blue-800 hover:bg-blue-100">
               Featured Tours
@@ -616,8 +620,8 @@ export const HomePage = () => {
                   <div className="flex items-center text-slate-500 text-sm mb-4">
                     <Calendar className="h-4 w-4 mr-1" />
                     {pkg.duration}
-                  </div>
-                  
+          </div>
+          
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
                       <span className="text-2xl font-bold text-slate-900">${pkg.price}</span>
@@ -633,7 +637,7 @@ export const HomePage = () => {
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
-                  </div>
+              </div>
                 </CardContent>
               </Card>
             ))}

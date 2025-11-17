@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, MapPin, Phone, Mail, ChevronDown, Send, CheckCircle } from 'lucide-react';
 import { Button } from './ui/button';
@@ -21,6 +21,8 @@ export const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mobileExpandedSection, setMobileExpandedSection] = useState(null);
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [isTransparent, setIsTransparent] = useState(false);
+  const headerRef = useRef(null);
   const [bookingForm, setBookingForm] = useState({
     name: '',
     email: '',
@@ -73,6 +75,49 @@ export const Header = () => {
 
   const isActive = (path) => location.pathname === path;
 
+  // Make header transparent while hero is beneath it on the home page
+  useEffect(() => {
+  const updateTransparency = () => {
+    if (location.pathname !== '/') {
+      setIsTransparent(false);
+      // Show scrollbar when not on home page
+      document.documentElement.classList.remove('scrollbar-hidden');
+      return;
+    }
+    const hero = document.getElementById('hero');
+    if (!hero) {
+      setIsTransparent(false);
+      // Show scrollbar when hero not found
+      document.documentElement.classList.remove('scrollbar-hidden');
+      return;
+    }
+    const rect = hero.getBoundingClientRect();
+    const headerHeight = headerRef.current ? headerRef.current.offsetHeight : 0;
+    // Transparent if the bottom of hero is still below the header + offset
+    // Add offset to make header turn opaque when half hero section is crossed
+    const offset = 550; // Half of hero height (720px)
+    const shouldBeTransparent = rect.bottom > (headerHeight + offset);
+    setIsTransparent(shouldBeTransparent);
+    
+    // Control scrollbar visibility based on transparency
+    if (shouldBeTransparent) {
+      // Hide scrollbar when header is transparent
+      document.documentElement.classList.add('scrollbar-hidden');
+    } else {
+      // Show scrollbar when header is opaque
+      document.documentElement.classList.remove('scrollbar-hidden');
+    }
+  };
+
+    updateTransparency();
+    window.addEventListener('scroll', updateTransparency, { passive: true });
+    window.addEventListener('resize', updateTransparency);
+    return () => {
+      window.removeEventListener('scroll', updateTransparency);
+      window.removeEventListener('resize', updateTransparency);
+    };
+  }, [location.pathname]);
+
   const internationalLocations = [
     { name: 'Bali, Indonesia', query: 'bali' },
     { name: 'Tokyo, Japan', query: 'tokyo' },
@@ -100,28 +145,34 @@ export const Header = () => {
   ];
 
   return (
-      <header className="bg-white shadow-sm border-b sticky top-0 z-50">
-      {/* Top bar */}
-      <div className="bg-slate-50 border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-2 text-sm">
-            <div className="hidden md:flex items-center space-x-6 text-slate-600">
-              <div className="flex items-center space-x-2">
-                <Phone className="h-4 w-4" />
-                <span>+1 (555) 123-4567</span>
+      <header
+        id="site-header"
+        ref={headerRef}
+        className={`${isTransparent ? 'bg-transparent border-transparent shadow-none' : 'bg-white shadow-sm border-b'} sticky top-0 z-50 transition-colors duration-300`}
+      >
+      {/* Top bar - hide on hero3 page */}
+      {location.pathname !== '/hero3' && (
+        <div className={`${isTransparent ? 'bg-transparent border-transparent' : 'bg-slate-50 border-b'} transition-colors duration-300`}>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="flex justify-between items-center py-2 text-sm">
+              <div className={`hidden md:flex items-center space-x-6 ${isTransparent ? 'text-white' : 'text-slate-600'}`}>
+                <div className="flex items-center space-x-2">
+                  <Phone className="h-4 w-4" />
+                  <span>+1 (555) 123-4567</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <Mail className="h-4 w-4" />
+                  <span>info@wanderlust.com</span>
+                </div>
               </div>
-              <div className="flex items-center space-x-2">
-                <Mail className="h-4 w-4" />
-                <span>info@wanderlust.com</span>
+              <div className={`flex items-center space-x-2 ${isTransparent ? 'text-white' : 'text-slate-600'}`}>
+                <MapPin className="h-4 w-4" />
+                <span>Serving travelers worldwide</span>
               </div>
-            </div>
-            <div className="flex items-center space-x-2 text-slate-600">
-              <MapPin className="h-4 w-4" />
-              <span>Serving travelers worldwide</span>
             </div>
           </div>
         </div>
-      </div>
+      )}
 
       {/* Main navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -132,23 +183,23 @@ export const Header = () => {
               <MapPin className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-2xl font-bold text-slate-900">Paradise Yatra</h1>
-              <p className="text-xs text-slate-500 -mt-1">Yatra To Paradise</p>
+              <h1 className={`text-2xl font-bold ${isTransparent ? 'text-white' : 'text-slate-900'}`}>Paradise Yatra</h1>
+              <p className={`text-xs -mt-1 ${isTransparent ? 'text-white/80' : 'text-slate-500'}`}>Yatra To Paradise</p>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-6">
             {/* International Tour */}
-            <NavigationMenu>
+            <NavigationMenu className="navigation-menu-clean">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>International Tour</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={`${isTransparent ? 'text-white hover:text-white/80' : ''} bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent`}>International Tour</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid grid-cols-1 gap-1 p-3 w-auto min-w-[200px]">
+                    <div className={`grid grid-cols-1 gap-1 p-3 w-auto min-w-[200px] rounded-md ${isTransparent ? 'bg-blue-50' : 'bg-white'}`}>
                       {internationalLocations.map((loc) => (
                         <NavigationMenuLink asChild key={loc.query}>
-                          <Link to={`/packages?location=${loc.query}`} className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 whitespace-nowrap transition-colors">
+                          <Link to={`/packages?location=${loc.query}`} className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-blue-100 hover:text-blue-600 whitespace-nowrap transition-colors">
                             {loc.name}
                           </Link>
                         </NavigationMenuLink>
@@ -160,15 +211,15 @@ export const Header = () => {
             </NavigationMenu>
 
             {/* India Tour */}
-            <NavigationMenu>
+            <NavigationMenu className="navigation-menu-clean">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>India Tour</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={`${isTransparent ? 'text-white hover:text-white/80' : ''} bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent`}>India Tour</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid grid-cols-1 gap-1 p-3 w-auto min-w-[200px]">
+                    <div className={`grid grid-cols-1 gap-1 p-3 w-auto min-w-[200px] rounded-md ${isTransparent ? 'bg-blue-50' : 'bg-white'}`}>
                       {indiaLocations.map((loc) => (
                         <NavigationMenuLink asChild key={loc.query}>
-                          <Link to={`/packages?india=${loc.query}`} className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 whitespace-nowrap transition-colors">
+                          <Link to={`/packages?india=${loc.query}`} className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-blue-100 hover:text-blue-600 whitespace-nowrap transition-colors">
                             {loc.name}
                           </Link>
                         </NavigationMenuLink>
@@ -180,15 +231,15 @@ export const Header = () => {
             </NavigationMenu>
 
             {/* Fixed Departure */}
-            <NavigationMenu>
+            <NavigationMenu className="navigation-menu-clean">
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Fixed Departure</NavigationMenuTrigger>
+                  <NavigationMenuTrigger className={`${isTransparent ? 'text-white hover:text-white/80' : ''} bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent`}>Fixed Departure</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <div className="grid grid-cols-1 gap-1 p-3 w-auto min-w-[200px]">
+                    <div className={`grid grid-cols-1 gap-1 p-3 w-auto min-w-[200px] rounded-md ${isTransparent ? 'bg-blue-50' : 'bg-white'}`}>
                       {indiaLocations.map((loc) => (
                         <NavigationMenuLink asChild key={`fd-${loc.query}`}>
-                          <Link to={`/packages?departure=${loc.query}`} className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-600 whitespace-nowrap transition-colors">
+                          <Link to={`/packages?departure=${loc.query}`} className="block rounded-md px-3 py-2 text-sm text-slate-700 hover:bg-blue-100 hover:text-blue-600 whitespace-nowrap transition-colors">
                             {loc.name}
                           </Link>
                         </NavigationMenuLink>
@@ -345,7 +396,7 @@ export const Header = () => {
           {/* Mobile menu button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2 rounded-md text-slate-700 hover:text-blue-600 hover:bg-slate-100"
+            className={`md:hidden p-2 rounded-md ${isTransparent ? 'text-white hover:text-white/80 hover:bg-white/10' : 'text-slate-700 hover:text-blue-600 hover:bg-slate-100'}`}
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
